@@ -2,7 +2,7 @@
 <html th:fragment="layout (template, menu)">
 
   <head>
-
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,9 +59,8 @@
                       <span>Veterinarians</span>
                   </li>
   
-                  <li th:replace="::menuItem ('/oups','error','trigger a RuntimeException to see how it is handled','warning-sign','Error')">
-                      <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
-                      <span>Error</span>
+                  <li th:replace="::menuItem ('/oups','about','trigger a RuntimeException to see how it is handled','warning-sign','about')">
+                      <span>About</span>
                   </li>
   
               </ul>
@@ -86,8 +85,12 @@
   </div>
 
   <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
   <script th:src="@{/webjars/jquery-ui/jquery-ui.min.js}"></script>
   <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <script>$(document).ready( function () {
+    $('#vets').DataTable();
+  } );</script>
 
 </body>
 
